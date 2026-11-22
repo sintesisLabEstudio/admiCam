@@ -1,30 +1,23 @@
-﻿
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
-namespace Ev3Api.Models
+namespace Ev3Api.Models;
+
+public class Chofer
 {
-    public class Chofer
-    {
-        public int IdChofer { get; set; }
+    [JsonPropertyName("ID_CHOFER")]
+    public int IdChofer { get; set; }
 
-        [Required(ErrorMessage = "El nombre del chofer es obligatorio.")]
-        [StringLength(50, ErrorMessage = "El nombre del chofer no puede superar los 50 caracteres.")]
-        public string NombreChofer { get; set; } = string.Empty;
+    [Required(ErrorMessage = "El campo NOM_CHOFER es obligatorio.")]
+    [StringLength(50, ErrorMessage = "NOM_CHOFER no puede superar los 50 caracteres.")]
+    [JsonPropertyName("NOM_CHOFER")]
+    public string NombreChofer { get; set; } = string.Empty;
 
-        [Range(1, 2, ErrorMessage = "Debe seleccionar un estado válido para el chofer.")]
-        public int IdEstado { get; set; } = Estado.Activo;
+    [Range(Estado.Activo, Estado.Inactivo, ErrorMessage = "Estado no válido.")]
+    [JsonPropertyName("ID_ESTADO")]
+    public int IdEstado { get; set; } = Estado.Activo;
 
-        public string? NombreEstado { get; set; }
-
-        public bool EstaActivo()
-        {
-            return IdEstado == Estado.Activo;
-        }
-
-        public bool TieneNombreValido()
-        {
-            return !string.IsNullOrWhiteSpace(NombreChofer)
-                && NombreChofer.Trim().Length <= 50;
-        }
-    }
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+    [JsonPropertyName("NOM_ESTADO")]
+    public string? NombreEstado { get; set; }
 }
