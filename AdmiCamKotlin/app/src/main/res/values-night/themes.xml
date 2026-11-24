@@ -1,0 +1,23 @@
+<resources>
+    <style name="Theme.AdmiCam" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/azul</item>
+        <item name="colorPrimaryVariant">@color/azul_oscuro</item>
+        <item name="colorOnPrimary">@color/blanco</item>
+        <!-- CAMBIO (24-11-2026): barras oscuras e iconos claros, coherente con la
+             paleta sobria de values/colors.xml y values-night/colors.xml.
+             ORIGINAL: statusBarColor/navigationBarColor = @color/azul_oscuro -->
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:statusBarColor">@color/barra</item>
+        <item name="android:navigationBarColor">@color/barra</item>
+
+        <!-- CAMBIO (24-11-2026): mismos colores de texto que values/themes.xml
+             para que las listas y spinners se lean igual con sistema claro u
+             oscuro (eran letras oscuras sobre fondo oscuro). -->
+        <item name="android:textColorPrimary">@color/texto</item>
+        <item name="android:textColorSecondary">@color/texto_secundario</item>
+        <!-- INTENTO DESCARTADO: ver values/themes.xml (atributos sin android:
+             no existen en este tema). -->
+        <!-- <item name="textColorPrimary">@color/texto</item> -->
+        <!-- <item name="textColorSecondary">@color/texto_secundario</item> -->
+    </style>
+</resources>

@@ -80,7 +80,22 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+// ============================================================================
+// CAMBIO (24-11-2026): Se condiciona la redirección HTTP -> HTTPS a que NO sea
+// entorno de Development.
+// Motivo: la app Kotlin llama a http://10.0.2.2:5000. Con UseHttpsRedirection
+// activo en Development, Kestrel responde 307 -> https://10.0.2.2:7001 y Android
+// no confía en el certificado de desarrollo de ASP.NET Core, dando un
+// SSLHandshakeException que PantallaBase mostraba como "No se pudo conectar
+// con la API". En el PC Swagger sí funciona porque el navegador confía en el
+// certificado. En Producción se conserva la redirección original.
+// CÓDIGO ORIGINAL (no eliminado, solo comentado):
+// app.UseHttpsRedirection();
+if (!app.Environment.IsDevelopment())
+{
+    app.UseHttpsRedirection();
+}
+// ============================================================================
 
 app.UseCors("PermitirTodo");
 

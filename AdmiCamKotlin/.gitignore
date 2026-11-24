@@ -1,0 +1,20 @@
+*.iml
+.gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+
+# CAMBIO (24-11-2026): se ignoran los ajustes locales del IDE (dispositivos
+# seleccionados, rutas del equipo, etc.). Motivo: son configuración de la
+# máquina, no código del proyecto, y no deben subirse al repositorio.
+.idea/

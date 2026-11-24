@@ -1,0 +1,42 @@
+<resources>
+    <style name="Theme.AdmiCam" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/azul</item>
+        <item name="colorPrimaryVariant">@color/azul_oscuro</item>
+        <item name="colorOnPrimary">@color/blanco</item>
+        <!-- CAMBIO (24-11-2026): se mantiene false para que los iconos de la barra
+             sean claros sobre la barra oscura (antes se compensaba con fondos claros). -->
+        <item name="android:windowLightStatusBar">false</item>
+        <!-- ORIGINAL: <item name="android:statusBarColor">@color/azul_oscuro</item> -->
+        <!-- ORIGINAL: <item name="android:navigationBarColor">@color/azul_oscuro</item> -->
+        <!-- CAMBIO: se usa el color nuevo @color/barra (#18212A). azul_oscuro pasó
+             a ser un azul claro para el texto de mensajes y no sirve de barra. -->
+        <item name="android:statusBarColor">@color/barra</item>
+        <item name="android:navigationBarColor">@color/barra</item>
+        <item name="android:fontFamily">sans</item>
+
+        <!-- CAMBIO (24-11-2026): las grillas/listas y los spinners usan layouts
+             del sistema (android.R.layout.simple_list_item_1 y
+             simple_spinner_dropdown_item), cuyo color de texto se toma de
+             textColorPrimary. Con el celular en modo claro salían letras
+             oscuras sobre el fondo oscuro de la app. Se fija el blanco suave.
+             No se toca ningún adapter: heredan de aquí. -->
+        <item name="android:textColorPrimary">@color/texto</item>
+        <item name="android:textColorSecondary">@color/texto_secundario</item>
+        <!-- INTENTO DESCARTADO (24-11-2026): textColorPrimary y textColorSecondary
+             sin el prefijo android: no existen en este tema (error de resource
+             linking). Se conservan comentados; solo funcionan los de arriba. -->
+        <!-- <item name="textColorPrimary">@color/texto</item> -->
+        <!-- <item name="textColorSecondary">@color/texto_secundario</item> -->
+    </style>
+
+    <!-- NUEVO (24-11-2026): estilo de diálogo oscuro y sobrio. Motivo: los
+         diálogos del sistema tomaban el tema claro del celular y deslumbraban.
+         Se aplica en PantallaBase.confirmar() y en el DatePickerDialog. -->
+    <style name="Theme.AdmiCam.Dialogo" parent="Theme.MaterialComponents.Dialog.Alert">
+        <item name="android:windowBackground">@drawable/dialog_fondo</item>
+        <item name="android:textColor">@color/texto</item>
+        <item name="colorSurface">@color/fondo</item>
+        <item name="colorOnSurface">@color/texto</item>
+        <item name="colorPrimary">@color/azul</item>
+    </style>
+</resources>

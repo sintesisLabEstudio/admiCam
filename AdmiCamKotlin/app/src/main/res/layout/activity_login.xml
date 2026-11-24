@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/fondo" android:fillViewport="true">
+  <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="14dp">
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/fondo_cabecera" android:textColor="@color/blanco" android:textSize="20sp" android:textStyle="bold" android:padding="16dp" android:layout_marginBottom="8dp" android:elevation="2dp" android:text="AdmiCam | Iniciar sesión"/>
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Usuario" android:textSize="17sp" android:textColor="@color/texto" android:paddingTop="10dp" android:paddingBottom="4dp"/>
+    <EditText android:id="@+id/txtUsuario" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="text" android:textColorHint="@color/texto_secundario" android:hint="Ingrese usuario" android:maxLength="20" android:singleLine="true" android:textColor="@color/texto" android:textSize="16sp"/>
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Contraseña" android:textSize="17sp" android:textColor="@color/texto" android:paddingTop="10dp" android:paddingBottom="4dp"/>
+    <EditText android:id="@+id/txtPassword" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="textPassword" android:textColorHint="@color/texto_secundario" android:hint="Ingrese contraseña" android:maxLength="20" android:singleLine="true" android:textColor="@color/texto" android:textSize="16sp"/>
+    <Button android:id="@+id/btnIngresar" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:backgroundTint="@color/azul" android:textColor="@color/blanco" android:text="Ingresar"/>
+    <Button android:id="@+id/btnLimpiar" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:backgroundTint="@color/azul" android:textColor="@color/blanco" android:text="Limpiar"/>
+    <TextView android:id="@+id/txtMensaje" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="8dp" android:layout_marginTop="10dp" android:textColor="@color/azul_oscuro" android:textSize="15sp" android:minHeight="44dp"/>
+  </LinearLayout>
+</ScrollView>

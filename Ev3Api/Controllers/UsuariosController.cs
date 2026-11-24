@@ -24,6 +24,10 @@ public class UsuariosController : ControllerBase
             await using var conn = _conexion.ObtenerConexion();
             await conn.OpenAsync();
 
+            // CAMBIO (24-11-2026): se documenta por qué ADMIN no aparece en la lista.
+            // Motivo: la app usa este listado para resolver USUARIO (ID) -> NOM_PERSONA,
+            // pero ADMIN se resuelve con un atajo en LoginActivity, por eso se excluye.
+            // No quitar el filtro: es el comportamiento esperado del requerimiento.
             const string sql = @"
                 SELECT u.USUARIO, u.NOM_PERSONA, u.ID_ESTADO, e.NOM_ESTADO
                 FROM USUARIOS u

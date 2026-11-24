@@ -18,6 +18,11 @@ public class AuthController : ControllerBase
         _conexion = conexion;
     }
 
+    // CAMBIO (24-11-2026): se documenta el contrato del endpoint, sin modificar la lógica.
+    // Motivo: la columna USUARIO es el ID de la cuenta (ADMIN) y NO se usa para validar;
+    // se valida NOM_PERSONA (ADMINISTRADOR) junto con PASSWORD. Esquema impuesto por
+    // el profesor. Si se envía {"USUARIO":"ADMIN","PASSWORD":"ADMIN"} da 400:
+    // "El campo NOM_PERSONA es obligatorio." (comprobado contra la API).
     [HttpPost("validaLogin")]
     public async Task<IActionResult> ValidaLogin([FromBody] CredencialesLogin credenciales)
     {
@@ -32,6 +37,11 @@ public class AuthController : ControllerBase
             await using var conn = _conexion.ObtenerConexion();
             await conn.OpenAsync();
 
+            // CAMBIO (24-11-2026): comentario aclarativo de la consulta (la SQL NO se toca).
+            // El WHERE filtra por NOM_PERSONA: ahí es donde se valida el "nombre de usuario".
+            // USUARIO solo aparece en el ORDER BY para priorizar la fila ADMIN cuando dos
+            // filas comparten NOM_PERSONA (ADMIN y 20 son ADMINISTRADOR).
+            // ID_ESTADO ordena y después se exige que sea Activo (1).
             const string sql = @"
                 SELECT TOP 1 USUARIO, NOM_PERSONA, PASSWORD, ID_ESTADO
                 FROM USUARIOS
@@ -77,6 +87,9 @@ public class AuthController : ControllerBase
         }
     }
 
+    // CAMBIO (24-11-2026): se aclara que el JSON de entrada debe traer NOM_PERSONA,
+    // aunque la propiedad en C# se llame NomPersona. El nombre del JSON está impuesto
+    // por JsonPropertyName("NOM_PERSONA") y por el requerimiento del profesor.
     public class CredencialesLogin
     {
         [Required(ErrorMessage = "El campo NOM_PERSONA es obligatorio.")]

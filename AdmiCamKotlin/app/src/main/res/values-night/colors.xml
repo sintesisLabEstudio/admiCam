@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- CAMBIO (24-11-2026): archivo NUEVO. El tema hereda de DayNight; sin este
+         archivo, cuando el celular activaba el modo oscuro del sistema se podían
+         usar colores distintos a los de values/colors.xml. Se replica la misma
+         paleta sobria para que la app se vea igual con sistema claro u oscuro. -->
+    <!-- AJUSTE (24-11-2026): se replican los mismos valores que values/colors.xml
+         pero un poco más claros, para que el sistema en modo oscuro se vea igual.
+         Valores anteriores: azul #3A546E, azul_oscuro #9FBBD6, fondo #20262D,
+         texto #E4E9EF, texto_secundario #AEB8C4, blanco #E4E9EF, barra #18212A. -->
+    <color name="azul">#43607D</color>
+    <color name="azul_oscuro">#B3C9DF</color>
+    <color name="fondo">#2B333C</color>
+    <color name="texto">#EDF1F6</color>
+    <color name="texto_secundario">#BCC6D1</color>
+    <color name="blanco">#EDF1F6</color>
+    <color name="barra">#222B35</color>
+</resources>
