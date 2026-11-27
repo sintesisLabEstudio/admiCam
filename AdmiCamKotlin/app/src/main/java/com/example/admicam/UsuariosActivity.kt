@@ -26,8 +26,12 @@ class UsuariosActivity : PantallaBase() {
             val clave = txtPassword.text.toString().trim()
             if (usuario.isEmpty() || nombre.isEmpty() || clave.isEmpty()) {
                 mensaje("Todos los campos son obligatorios.")
-            } else if (usuario.length > 20 || nombre.length > 50 || clave.length > 20) {
-                mensaje("Revisa los largos máximos: usuario y clave 20, nombre 50.")
+            } else if (usuario.length > 20) {
+                mensaje("El usuario no puede superar los 20 caracteres.")
+            } else if (nombre.length > 50) {
+                mensaje("El nombre completo no puede superar los 50 caracteres.")
+            } else if (clave.length > 20) {
+                mensaje("La contraseña no puede superar los 20 caracteres.")
             } else {
                 // CÓDIGO ORIGINAL (no eliminado, solo comentado):
                 // consultar(btnGuardar, { RetrofitCliente.ruta.crearUsuario(Usuario(usuario, nombre, clave, 1)) }) { _, aviso ->
