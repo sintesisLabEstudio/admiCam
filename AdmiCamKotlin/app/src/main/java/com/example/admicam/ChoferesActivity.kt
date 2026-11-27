@@ -1,26 +1,22 @@
 package com.example.admicam
-
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ListView
 import android.widget.Spinner
-
 class ChoferesActivity : PantallaBase() {
     private var choferes = listOf<Chofer>()
     private lateinit var listado: ListView
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_choferes)
         listado = findViewById(R.id.listaRegistros)
         val nombre = findViewById<EditText>(R.id.txtNombre)
         val estado = findViewById<Spinner>(R.id.spEstado)
-        estado.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, listOf("ACTIVO", "INACTIVO"))
+        estado.adapter = adaptadorSpinner(listOf("ACTIVO", "INACTIVO"))
         findViewById<Button>(R.id.btnVolver).setOnClickListener { finish() }
         val guardar = findViewById<Button>(R.id.btnGuardar)
-
         guardar.setOnClickListener {
             val texto = nombre.text.toString().trim()
             if (texto.isEmpty()) mensaje("Debe ingresar un nombre.")
@@ -42,12 +38,10 @@ class ChoferesActivity : PantallaBase() {
             }
         }
     }
-
     override fun onResume() {
         super.onResume()
         cargar()
     }
-
     private fun cargar() {
         consultar(llamada = { RetrofitCliente.ruta.listarChoferes() }) { datos, _ ->
             choferes = datos.orEmpty()

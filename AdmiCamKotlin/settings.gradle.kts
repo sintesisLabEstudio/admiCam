@@ -21,7 +21,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-
 rootProject.name = "AdmiCamKotlin"
 include(":app")
- 

@@ -1,6 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
 namespace Ev3Api.Models;
-
 public class Acceso
 {
     [Required]

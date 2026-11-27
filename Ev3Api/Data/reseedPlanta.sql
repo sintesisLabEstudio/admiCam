@@ -1,0 +1,11 @@
+SELECT IDENT_CURRENT('dbo.PLANTA') AS IdentActual,
+       MAX(ID_PLANTA)             AS MaxIdActual,
+       COUNT(*)                   AS TotalFilas
+FROM dbo.PLANTA;
+GO
+SELECT ID_PLANTA, NOM_PLANTA FROM dbo.PLANTA ORDER BY ID_PLANTA;
+GO
+DBCC CHECKIDENT('dbo.PLANTA', RESEED, 9);
+GO
+SELECT IDENT_CURRENT('dbo.PLANTA') AS IdentDespues;
+GO

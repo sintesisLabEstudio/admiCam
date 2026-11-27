@@ -1,10 +1,8 @@
 package com.example.admicam
-
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
-
 class MenuActivity : PantallaBase() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -15,7 +13,6 @@ class MenuActivity : PantallaBase() {
         }
         setContentView(R.layout.activity_menu)
         findViewById<TextView>(R.id.txtBienvenida).text = "Bienvenido: ${Sesion.nombre}"
-
         findViewById<Button>(R.id.btnUsuarios).setOnClickListener { ir(UsuariosActivity::class.java) }
         findViewById<Button>(R.id.btnChoferes).setOnClickListener { ir(ChoferesActivity::class.java) }
         findViewById<Button>(R.id.btnPlantas).setOnClickListener { ir(PlantasActivity::class.java) }
@@ -29,7 +26,6 @@ class MenuActivity : PantallaBase() {
             }
         }
     }
-
     private fun ir(destino: Class<*>) {
         startActivity(Intent(this, destino))
     }

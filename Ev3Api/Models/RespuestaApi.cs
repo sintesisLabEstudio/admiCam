@@ -1,5 +1,4 @@
 ﻿namespace Ev3Api.Models;
-
 public class RespuestaApi<T>
 {
     public bool Resultado { get; set; }

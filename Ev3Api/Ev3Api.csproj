@@ -3,6 +3,12 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <!-- CAMBIO (27-11-2026): se desactiva la auditoria de vulnerabilidades de NuGet.
+         Motivo: en los PCs de entrega no hay acceso a https://api.nuget.org/v3/index.json
+         y cada restore imprimia el warning NU1900 ("No se puede cargar el indice de
+         servicio"). No es un error de compilacion ni afecta a la API en ejecucion.
+         Los paquetes siguen restaurandose desde la cache local. -->
+    <NuGetAudit>false</NuGetAudit>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.0" />

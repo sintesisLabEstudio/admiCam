@@ -5,8 +5,6 @@ echo =============================================
 echo   Ev3Api - inicio con runtime .NET 10
 echo =============================================
 echo.
-REM La API sigue apuntando a net8.0. Solo habilitamos usar una version mayor instalada.
-REM Coloque este archivo junto al correrApi.bat original (al lado de Ev3Api).
 set "API_DIR=%~dp0Ev3Api"
 if not exist "%API_DIR%\Ev3Api.csproj" (
   if exist "%~dp0admiCam-main\Ev3Api\Ev3Api.csproj" (
@@ -30,8 +28,6 @@ echo.
 echo Proyecto: "%API_DIR%\Ev3Api.csproj"
 echo Direccion prevista: http://localhost:5000
 echo.
-REM Permite ejecutar una aplicacion de net8.0 usando un runtime mayor instalado.
-REM NO cambia el archivo .csproj, la API ni SQL Server.
 set "DOTNET_ROLL_FORWARD=Major"
 pushd "%API_DIR%"
 if errorlevel 1 goto :fallo

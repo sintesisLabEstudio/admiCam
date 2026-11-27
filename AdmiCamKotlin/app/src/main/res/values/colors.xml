@@ -1,40 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- =====================================================================
-         CAMBIO (24-11-2026): paleta oscura y sobria para reducir el brillo.
-         Motivo: los fondos claros anteriores (#F4F7FA) molestaban a la vista.
-         Se usa gris oscuro (#20262D), NUNCA negro puro, y textos en blanco
-         suave (#E4E9EF) en vez de blanco puro para evitar deslumbramiento.
-         Los valores originales se conservan comentados.
-         ===================================================================== -->
-
-    <!-- ORIGINAL: <color name="azul">#23476B</color> -->
-    <!-- AJUSTE (24-11-2026): se aclara un poco respecto a #3A546E. -->
     <color name="azul">#43607D</color>
-
-    <!-- ORIGINAL: <color name="azul_oscuro">#16324E</color> -->
-    <!-- AJUSTE: antes #9FBBD6; se sube suavemente para leer mejor los mensajes. -->
     <color name="azul_oscuro">#B3C9DF</color>
-
-    <!-- ORIGINAL: <color name="fondo">#F4F7FA</color> -->
-    <!-- AJUSTE: antes #20262D; se pasa a #2B333C para un gris oscuro un poco
-         más claro, sin volver al fondo luminoso original. -->
     <color name="fondo">#2B333C</color>
-
-    <!-- ORIGINAL: <color name="texto">#172A3A</color> -->
-    <!-- AJUSTE: antes #E4E9EF; blanco suave ligeramente más claro. -->
-    <color name="texto">#EDF1F6</color>
-
-    <!-- ORIGINAL: <color name="texto_secundario">#526575</color> -->
-    <!-- AJUSTE: antes #AEB8C4. -->
+    <color name="texto">#FFFFFF</color>
     <color name="texto_secundario">#BCC6D1</color>
-
-    <!-- ORIGINAL: <color name="blanco">#FFFFFF</color> -->
-    <!-- AJUSTE: antes #E4E9EF; se mantiene suave, no blanco puro. -->
-    <color name="blanco">#EDF1F6</color>
-
-    <!-- NUEVO (24-11-2026): color de las barras de sistema. Se separa de
-         azul_oscuro porque ese color ahora se usa para el texto de mensajes.
-         AJUSTE: antes #18212A, se aclara un poco a #222B35. -->
+    <color name="blanco">#FFFFFF</color>
     <color name="barra">#222B35</color>
 </resources>

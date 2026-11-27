@@ -2,7 +2,6 @@
 using Ev3Api.Models;
 using Microsoft.AspNetCore.Mvc;
 namespace Ev3Api.Controllers;
-
 [ApiController]
 [Route("api/[controller]")]
 public class DiagnosticoController : ControllerBase

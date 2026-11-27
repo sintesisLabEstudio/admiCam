@@ -4,13 +4,11 @@
     android:layout_height="match_parent"
     android:background="@color/fondo"
     android:fillViewport="true">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="14dp">
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -21,17 +19,15 @@
             android:textColor="@color/blanco"
             android:textSize="20sp"
             android:textStyle="bold" />
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="18dp"
-            android:paddingTop="10dp"
-            android:paddingBottom="4dp"
+            android:layout_marginTop="8dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="2dp"
             android:text="Usuario"
             android:textColor="@color/texto"
             android:textSize="16sp" />
-
         <EditText
             android:id="@+id/txtUsuario"
             android:layout_width="match_parent"
@@ -41,18 +37,16 @@
             android:maxLength="20"
             android:singleLine="true"
             android:textColor="@color/texto"
-            android:textColorHint="@color/texto_secundario"
+            android:textColorHint="@color/blanco"
             android:textSize="16sp" />
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="10dp"
-            android:paddingBottom="4dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="2dp"
             android:text="Contraseña"
             android:textColor="@color/texto"
             android:textSize="16sp" />
-
         <EditText
             android:id="@+id/txtPassword"
             android:layout_width="match_parent"
@@ -62,18 +56,16 @@
             android:maxLength="20"
             android:singleLine="true"
             android:textColor="@color/texto"
-            android:textColorHint="@color/texto_secundario"
+            android:textColorHint="@color/blanco"
             android:textSize="16sp" />
-
         <Button
             android:id="@+id/btnIngresar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="8dp"
             android:backgroundTint="@color/azul"
             android:text="Ingresar"
             android:textColor="@color/blanco" />
-
         <Button
             android:id="@+id/btnLimpiar"
             android:layout_width="match_parent"
@@ -82,37 +74,31 @@
             android:backgroundTint="@color/azul"
             android:text="Limpiar"
             android:textColor="@color/blanco" />
-
         <TextView
             android:id="@+id/txtMensaje"
-            android:layout_width="match_parent"
+            android:visibility="gone" android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:minHeight="32dp"
-            android:padding="8dp"
-            android:textColor="@color/azul_oscuro"
+            android:minHeight="0dp"
+            android:padding="2dp"
+            android:textColor="@color/blanco"
             android:textSize="14sp" />
-
-        <!-- Usa el espacio disponible para colocar el bloque academico abajo. -->
         <Space
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1" />
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="18dp"
+            android:layout_marginTop="8dp"
             android:background="@drawable/fondo_info_institucional"
             android:orientation="vertical"
             android:padding="11dp">
-
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/fondo_logo_institucional"
                 android:padding="4dp">
-
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
@@ -120,7 +106,6 @@
                     android:scaleType="fitCenter"
                     android:src="@drawable/logo_virginio_gomez" />
             </FrameLayout>
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -130,7 +115,6 @@
                 android:textColor="@color/texto"
                 android:textSize="12sp"
                 android:textStyle="bold" />
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -139,7 +123,6 @@
                 android:text="Técnico Analista Programador"
                 android:textColor="@color/texto_secundario"
                 android:textSize="11sp" />
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
